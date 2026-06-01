@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu — La La's Lemonade</title>
+  <meta name="description" content="Caribbean-style lemonade menu. Classic, flavored, creamy specials, energy lemonades, and weekend specials — available in 24oz or 32oz.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍋</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/Logo.jpg" alt="La La's Lemonade logo" class="nav-logo-img">
+        La La's Lemonade
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><a href="events.html">Events</a></li>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="booking.html">Book Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero hero-small" aria-label="Menu hero">
+    <div class="hero-content">
+      <h1>The Menu</h1>
+      <p class="hero-sub hero-sub-white">Caribbean Style &nbsp;·&nbsp; Made Fresh &nbsp;·&nbsp; 24oz or 32oz</p>
+    </div>
+  </section>
+
+  <!-- ==================== LEMONADE TYPES ==================== -->
+  <section style="background: var(--cream);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Drinks</span>
+        <h2>Lemonade</h2>
+      </div>
+
+      <div style="margin-bottom: 2rem;">
+        <img
+          src="images/Bottled.png"
+          alt="La La's Cold Pressed Classic Lemonade bottles"
+          class="product-photo"
+        >
+      </div>
+
+      <div class="lemonade-grid">
+        <div class="lemonade-item">
+          <h3>Classic</h3>
+          <p>Fresh lemon, real sugar, water. The original Caribbean-style — clean, tart, and refreshing. The base everything starts from.</p>
+        </div>
+
+        <div class="lemonade-item">
+          <h3>Flavored</h3>
+          <p>Classic base plus your choice of syrup flavor. Ask what syrups are available at the market — we rotate them seasonally.</p>
+        </div>
+
+        <div class="lemonade-item">
+          <h3>Creamy Specials</h3>
+          <p>Classic base plus cream — silky, rich, and totally indulgent. Our condensed milk lemonades fall in this category.</p>
+        </div>
+
+        <div class="lemonade-item">
+          <h3>Fruity Specials</h3>
+          <p>Flavored base with fresh fruit added in — muddled and shaken for a bold, layered taste. Extra tropical.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WEEKEND SPECIALS ==================== -->
+  <section style="background: var(--white);">
+    <div class="container">
+      <div class="specials-section">
+        <span class="specials-label">Weekend Specials ✨</span>
+        <h2>Signature Flavors</h2>
+        <p class="section-note">Available at farmers markets and pop-ups — ask what's on the board this weekend.</p>
+
+        <div class="specials-grid">
+
+          <div class="special-card">
+            <h3>La La's Baby</h3>
+            <p>Passionfruit syrup, secret ingredient, shaken lemonade. Our most iconic flavor — named for La La herself.</p>
+          </div>
+
+          <div class="special-card">
+            <h3>Strawberry Coco</h3>
+            <p>Strawberry syrup, coconut sauce, muddled lemonade. Creamy, fruity, and completely addictive.</p>
+          </div>
+
+          <div class="special-card">
+            <h3>Brazilian Inspired</h3>
+            <p>Condensed milk, muddled &amp; shaken limeade. Inspired by the classic Brazilian limonada suíça — rich and velvety.</p>
+          </div>
+
+          <div class="special-card">
+            <h3>Creamy Lemonade</h3>
+            <p>Condensed milk, muddled &amp; shaken lemonade. Simple, sweet, and impossibly smooth.</p>
+          </div>
+
+          <div class="special-card">
+            <h3>Pina Colada</h3>
+            <p>Pineapple syrup, coconut sauce, muddled lemonade. Like a tropical vacation in a cup.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ENERGY LEMONADE ==================== -->
+  <section style="background: var(--cream);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Boost</span>
+        <h2>Energy Lemonade</h2>
+      </div>
+
+      <div class="drinks-grid">
+        <div class="drink-item">
+          <span class="drink-icon">⚡</span>
+          <div>
+            <h3>Lotus + Lemonade</h3>
+            <p>Lotus Energy mixed into La La's classic lemonade — clean energy, no crash.</p>
+          </div>
+        </div>
+
+        <div class="drink-item">
+          <span class="drink-icon">🐂</span>
+          <div>
+            <h3>Red Bull + Lemonade</h3>
+            <p>Red Bull topped with La La's lemonade — sparkling, tart, and energizing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== OTHER DRINKS ==================== -->
+  <section style="background: var(--white);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Also Available</span>
+        <h2>Other Drinks</h2>
+      </div>
+
+      <div class="drinks-grid">
+        <div class="drink-item">
+          <span class="drink-icon">🐂</span>
+          <div>
+            <h3>Red Bull</h3>
+            <p>Original Red Bull can, available on its own.</p>
+          </div>
+        </div>
+
+        <div class="drink-item">
+          <span class="drink-icon">💧</span>
+          <div>
+            <h3>Water</h3>
+            <p>Bottled water — because hydration matters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== MIXING RECIPES ==================== -->
+  <section style="background: var(--cream);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Customer Favorites</span>
+        <h2>Mixing Suggestions</h2>
+      </div>
+
+      <!-- IMPORTANT: La La's does not sell alcohol. These are customer-submitted recipes. -->
+      <div class="disclaimer-box" role="note">
+        <strong>Please note:</strong> We don't sell alcohol. These are popular mixing recipes our customers enjoy with our lemonade at home. Always drink responsibly and in accordance with local laws.
+      </div>
+
+      <div class="recipe-grid">
+
+        <div class="recipe-card">
+          <h3>Shandy</h3>
+          <p class="recipe-subtitle">Light &amp; refreshing</p>
+          <ul class="recipe-ingredients">
+            <li>Your favorite beer (lager or wheat beer works great)</li>
+            <li>La La's Classic Lemonade</li>
+            <li>Mix 1:1 over ice</li>
+          </ul>
+        </div>
+
+        <div class="recipe-card">
+          <h3>Spiked Lemonade</h3>
+          <p class="recipe-subtitle">The classic</p>
+          <ul class="recipe-ingredients">
+            <li>Rum (white or coconut rum)</li>
+            <li>La La's Classic or Flavored Lemonade</li>
+            <li>Garnish with a lemon slice</li>
+          </ul>
+        </div>
+
+        <div class="recipe-card">
+          <h3>Lazy Lemon Drop</h3>
+          <p class="recipe-subtitle">Citrus forward</p>
+          <ul class="recipe-ingredients">
+            <li>Vodka</li>
+            <li>Cointreau or triple sec</li>
+            <li>La La's Classic Lemonade</li>
+            <li>Shake over ice &amp; strain</li>
+          </ul>
+        </div>
+
+        <div class="recipe-card" style="border-top-color: var(--green);">
+          <h3>Mocktail <span class="tag tag-green" style="font-size: 0.7rem; padding: 0.15rem 0.6rem;">🌿 Non-Alcoholic</span></h3>
+          <p class="recipe-subtitle">Zero proof, all flavor</p>
+          <ul class="recipe-ingredients">
+            <li>A few dashes of bitters</li>
+            <li>Fresh rosemary sprig (muddled)</li>
+            <li>Tart cherry juice</li>
+            <li>La La's Classic Lemonade</li>
+            <li>Serve over ice with a rosemary garnish</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Cup sizes callout -->
+      <div class="size-callout">
+        <h3>24oz or 32oz</h3>
+        <p>All lemonades are available in your choice of cup size.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.85rem; opacity: 0.75;">Ask about La La's Baby at the market — it's a weekend special and sells out fast!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CTA ==================== -->
+  <section style="background: var(--green); text-align: center; padding: 4rem 1.5rem;">
+    <div class="container">
+      <h2 style="color: var(--black); margin-bottom: 1rem;">Want La La's at Your Event?</h2>
+      <p style="color: rgba(0,0,0,0.75); margin-bottom: 2rem; font-size: 1.05rem;">We bring the full menu — made fresh, made with love.</p>
+      <a href="booking.html" class="btn btn-lemon">Book Us →</a>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">
+          <img src="images/Logo.jpg" alt="" style="width:36px;height:36px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:0.5rem;">
+          La La's Lemonade
+        </span>
+        <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; margin-top: 0.5rem;">Award-winning Caribbean-style lemonade<br>crafted in Seattle, WA.</p>
+        <p class="footer-tagline">St. Thomas to Seattle 🍋</p>
+      </div>
+
+      <div>
+        <h4>Pages</h4>
+        <ul class="footer-nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events &amp; Pop-Ups</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Book Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-contact-list">
+          <li><a href="tel:9713616359">📞 971-361-6359</a></li>
+          <li><a href="mailto:quinitaw@lalascaribbeanlemonade.com">✉️ quinitaw@lalascaribbeanlemonade.com</a></li>
+          <li><a href="https://instagram.com/lalaslemonadewa" target="_blank" rel="noopener">📱 @lalaslemonadewa</a></li>
+          <li><p>🌐 lalascaribbeanlemonade.com</p></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 La La's Lemonade · Founded by Quinita Whitfield · Seattle, WA · All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle   = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>

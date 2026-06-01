@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events & Pop-Ups — La La's Lemonade</title>
+  <meta name="description" content="Find La La's Lemonade at farmers markets, pop-ups, and events across the Seattle area. Check our upcoming schedule.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍋</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================== NAVIGATION ==================== -->
+  <nav class="nav" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/Logo.jpg" alt="La La's Lemonade logo" class="nav-logo-img">
+        La La's Lemonade
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" role="list">
+        <li><a href="events.html" class="active">Events</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="booking.html">Book Us</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero hero-small" aria-label="Events hero">
+    <div class="hero-content">
+      <h1>Find Us</h1>
+      <p class="hero-sub hero-sub-white">Farmers markets, pop-ups &amp; events across the Seattle area</p>
+    </div>
+  </section>
+
+  <!-- ==================== UPCOMING EVENTS ==================== -->
+  <section style="background: var(--cream);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Schedule</span>
+        <h2>Upcoming Events</h2>
+      </div>
+
+      <!-- Events rendered by events.js — to update, edit the array in events.js -->
+      <div class="events-grid" id="events-container">
+        <p class="no-events">Loading events…</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== WE ALSO APPEAR AT ==================== -->
+  <section style="background: var(--white);">
+    <div class="container">
+      <h3 style="margin-bottom: 1.5rem; color: var(--black);">We Also Appear At</h3>
+
+      <div class="appears-grid">
+        <div class="appears-item"><span>🎺</span> Jazz Festivals</div>
+        <div class="appears-item"><span>🎉</span> Private Parties</div>
+        <div class="appears-item"><span>💼</span> Corporate Events</div>
+        <div class="appears-item"><span>👶</span> Baby Showers</div>
+        <div class="appears-item"><span>💍</span> Wedding Receptions</div>
+        <div class="appears-item"><span>🍹</span> Community Pop-Ups</div>
+      </div>
+
+      <div style="text-align: center; margin-top: 1rem;">
+        <p style="margin-bottom: 1.25rem; color: #555;">Want us at your event? We'd love to bring the Caribbean vibes.</p>
+        <a href="booking.html" class="btn btn-coral">Book Us for Your Event →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== EMAIL SIGNUP ==================== -->
+  <section class="email-signup">
+    <div class="container">
+      <script async data-uid="4921169add" src="https://mbg-consulting.kit.com/4921169add/index.js"></script>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-logo">
+          <img src="images/Logo.jpg" alt="" style="width:36px;height:36px;border-radius:50%;object-fit:cover;vertical-align:middle;margin-right:0.5rem;">
+          La La's Lemonade
+        </span>
+        <p style="color: rgba(255,255,255,0.65); font-size: 0.9rem; margin-top: 0.5rem;">Award-winning Caribbean-style lemonade<br>crafted in Seattle, WA.</p>
+        <p class="footer-tagline">St. Thomas to Seattle 🍋</p>
+      </div>
+
+      <div>
+        <h4>Pages</h4>
+        <ul class="footer-nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="events.html">Events &amp; Pop-Ups</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="booking.html">Book Us</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Contact</h4>
+        <ul class="footer-contact-list">
+          <li><a href="tel:9713616359">📞 971-361-6359</a></li>
+          <li><a href="mailto:quinitaw@lalascaribbeanlemonade.com">✉️ quinitaw@lalascaribbeanlemonade.com</a></li>
+          <li><a href="https://instagram.com/lalaslemonadewa" target="_blank" rel="noopener">📱 @lalaslemonadewa</a></li>
+          <li><p>🌐 lalascaribbeanlemonade.com</p></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 La La's Lemonade · Founded by Quinita Whitfield · Seattle, WA · All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="events.js"></script>
+  <script>
+    const toggle   = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>

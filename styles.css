@@ -1,0 +1,1175 @@
+/* ============================================
+   La La's Lemonade — styles.css
+   Caribbean Style · Seattle, WA
+   ============================================ */
+
+/* === Variables === */
+:root {
+  --green:      #00bf63;
+  --lemon:      #f8d207;
+  --coral:      #ff5756;
+  --black:      #0d0d0d;
+  --white:      #ffffff;
+  --cream:      #fffdf0;
+  --dark-green: #0a5c2f;
+
+  --font-display: 'Shrikhand', serif;
+  --font-body:    'Poppins', sans-serif;
+
+  --radius-pill: 100px;
+  --radius-card: 16px;
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --max-width:   1200px;
+}
+
+/* === Reset === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--black);
+  background: var(--cream);
+  line-height: 1.65;
+  font-size: 16px;
+  overflow-x: hidden;
+}
+
+img  { max-width: 100%; display: block; }
+a    { color: inherit; text-decoration: none; }
+ul   { list-style: none; }
+
+/* === Typography === */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+h1 { font-size: clamp(2.6rem, 6vw, 5rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); }
+h3 { font-size: clamp(1.05rem, 2.5vw, 1.4rem); }
+
+/* Item description beneath headings — matches handout small uppercase style */
+.item-desc {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #777;
+  margin-top: 0.2rem;
+}
+
+p { line-height: 1.7; }
+
+.section-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 0.6rem;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+section { padding: 5rem 0; }
+
+.text-center { text-align: center; }
+
+/* === Buttons === */
+.btn {
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  border: 2.5px solid transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(0,0,0,0.15);
+}
+
+.btn-lemon         { background: var(--lemon); color: var(--black); border-color: var(--lemon); }
+.btn-coral         { background: var(--coral); color: var(--white); border-color: var(--coral); }
+.btn-green         { background: var(--green); color: var(--white); border-color: var(--green); }
+.btn-dark          { background: var(--dark-green); color: var(--white); border-color: var(--dark-green); }
+
+.btn-outline-white {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--white);
+}
+.btn-outline-white:hover {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* === Tags === */
+.tag {
+  display: inline-block;
+  padding: 0.28rem 0.9rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.tag-coral { background: var(--coral); color: var(--white); }
+.tag-lemon { background: var(--lemon); color: var(--black); }
+.tag-green { background: var(--green); color: var(--white); }
+.tag-dark  { background: var(--black); color: var(--lemon); }
+
+/* ============================================
+   Navigation
+   ============================================ */
+.nav {
+  background: var(--black);
+  border-bottom: 3px solid var(--lemon);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.nav-logo-img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--lemon);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.85);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+  padding: 0.25rem 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--lemon);
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  flex-direction: column;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .nav { position: sticky; }
+
+  .nav-toggle { display: flex; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--black);
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    z-index: 199;
+  }
+
+  .nav-links.is-open { display: flex; }
+
+  .nav-links a {
+    display: block;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+}
+
+/* ============================================
+   Hero
+   ============================================ */
+.hero {
+  background: var(--green);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Home hero uses island photo with light green overlay — keep the St. Thomas beach visible */
+.hero-main {
+  background:
+    linear-gradient(rgba(0, 191, 99, 0.48), rgba(0, 191, 99, 0.52)),
+    url('images/Island.jpg') center / cover no-repeat;
+}
+
+.hero-content {
+  padding: 4rem 1.5rem 5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+/* Centered hero layout — used on home page */
+.hero-centered {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Large circular logo badge in hero */
+.hero-logo-badge {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--lemon);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+  margin-bottom: 1.5rem;
+}
+
+.hero-main .hero-content {
+  padding-top: 4.5rem;
+  padding-bottom: 5rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--coral);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.4rem 1.2rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+.hero h1 {
+  color: var(--black);
+  margin-bottom: 0.4rem;
+}
+
+.hero-sub {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+  color: var(--black);
+  opacity: 0.8;
+  margin-bottom: 2.5rem;
+}
+
+.hero-sub-white { color: var(--black); opacity: 0.75; font-style: normal; }
+
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Small hero for inner pages — centered */
+.hero-small .hero-content {
+  padding-top: 3rem;
+  padding-bottom: 3.5rem;
+  text-align: center;
+}
+
+.hero-small h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+
+/* ============================================
+   Ticker Strip
+   ============================================ */
+.ticker {
+  background: var(--lemon);
+  overflow: hidden;
+  padding: 0.85rem 0;
+  white-space: nowrap;
+}
+
+.ticker-track {
+  display: inline-flex;
+  animation: ticker-scroll 28s linear infinite;
+}
+
+.ticker-content {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.88rem;
+  letter-spacing: 0.1em;
+  color: var(--dark-green);
+  text-transform: uppercase;
+  padding-right: 4rem;
+}
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ============================================
+   Our Story Section
+   ============================================ */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.story-text h2  { margin-bottom: 1.25rem; }
+.story-text p   { color: #333; margin-bottom: 1rem; }
+
+.story-note {
+  font-weight: 700;
+  color: var(--coral);
+  font-size: 0.95rem;
+}
+
+.story-photo {
+  width: 100%;
+  border-radius: var(--radius-card);
+  display: block;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+}
+
+.story-photo-caption {
+  text-align: center;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--coral);
+  margin-top: 0.6rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.01em;
+}
+
+.product-photo {
+  width: 100%;
+  border-radius: var(--radius-card);
+  object-fit: cover;
+  max-height: 320px;
+  display: block;
+  box-shadow: var(--shadow-card);
+}
+
+.award-photo {
+  width: 100%;
+  border-radius: var(--radius-card);
+  object-fit: cover;
+  object-position: top;
+  max-height: 440px;
+  display: block;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+  margin-bottom: 1.5rem;
+}
+
+.story-photo-placeholder {
+  background: var(--green);
+  border-radius: var(--radius-card);
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0,0,0,0.4);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.story-quote-card {
+  background: var(--green);
+  border: 3px solid var(--lemon);
+  border-radius: var(--radius-card);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.quote-emoji {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.story-quote-card blockquote {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 1.25rem;
+  color: var(--black);
+  line-height: 1.55;
+}
+
+/* ============================================
+   Flavor Cards
+   ============================================ */
+.section-header { margin-bottom: 3rem; }
+.section-header h2 { margin-top: 0.25rem; }
+
+.flavors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.flavor-card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+.flavor-card-top {
+  background: var(--black);
+  padding: 1.5rem;
+}
+
+.flavor-card-top h3 {
+  color: var(--white);
+  font-size: 1.25rem;
+  margin-bottom: 0.2rem;
+}
+
+.flavor-card-top .flavor-type {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+}
+
+.flavor-card-body {
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.flavor-card-body p {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* ============================================
+   Find Us Section
+   ============================================ */
+.find-us-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+}
+
+.find-us-block {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--white);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.find-us-block .block-icon {
+  font-size: 1.7rem;
+  background: var(--green);
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 0.9rem;
+}
+
+.find-us-block h3 {
+  font-size: 1rem;
+  color: var(--black);
+  margin-bottom: 0.35rem;
+}
+
+.find-us-block p {
+  font-size: 0.85rem;
+  color: #777;
+  line-height: 1.4;
+}
+
+/* ============================================
+   Email Signup
+   ============================================ */
+.email-signup {
+  background: var(--coral);
+  color: var(--white);
+  text-align: center;
+}
+
+.email-signup h2    { margin-bottom: 0.75rem; }
+.email-signup .lead { margin-bottom: 2rem; font-size: 1.05rem; opacity: 0.92; }
+
+.signup-form {
+  display: flex;
+  gap: 0.75rem;
+  max-width: 480px;
+  margin: 0 auto 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.signup-form input[type="email"] {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.875rem 1.25rem;
+  border-radius: var(--radius-pill);
+  border: none;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  outline: none;
+  color: var(--black);
+}
+
+.signup-note {
+  font-size: 0.78rem;
+  opacity: 0.7;
+}
+
+/* ============================================
+   Events Page
+   ============================================ */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.event-card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.event-date-badge {
+  background: var(--lemon);
+  border-radius: 12px;
+  padding: 0.65rem 0.75rem;
+  text-align: center;
+  min-width: 58px;
+  flex-shrink: 0;
+}
+
+.event-date-badge .evt-month {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--black);
+}
+
+.event-date-badge .evt-day {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: var(--black);
+  line-height: 1;
+}
+
+.event-info h3 {
+  font-size: 1.05rem;
+  color: var(--black);
+  margin-bottom: 0.35rem;
+}
+
+.event-meta {
+  font-size: 0.88rem;
+  color: #666;
+  margin-bottom: 0.6rem;
+  line-height: 1.5;
+}
+
+.no-events {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #999;
+  font-style: italic;
+  grid-column: 1 / -1;
+  font-size: 0.95rem;
+}
+
+/* Dotted separator — used between menu items like the handout */
+.dotted-list .dotted-item {
+  padding: 1rem 0;
+  border-bottom: 1px dotted #ccc;
+}
+.dotted-list .dotted-item:last-child { border-bottom: none; }
+.dotted-list .dotted-item h3 { margin-bottom: 0.2rem; }
+
+/* Also Appears */
+.appears-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.appears-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.1rem;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-card);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   Menu Page
+   ============================================ */
+.lemonade-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.lemonade-item {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  border-left: 4px solid var(--green);
+}
+
+.lemonade-item h3 {
+  color: var(--black);
+  margin-bottom: 0.4rem;
+}
+
+.lemonade-item p {
+  color: #555;
+  font-size: 0.93rem;
+}
+
+/* Weekend Specials */
+.specials-section {
+  background: var(--lemon);
+  border-radius: 28px;
+  padding: 3rem 2.5rem;
+}
+
+.specials-label {
+  display: block;
+  text-align: center;
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--dark-green);
+  margin-bottom: 0.25rem;
+}
+
+.specials-section h2 {
+  text-align: center;
+  color: var(--dark-green);
+  margin-bottom: 0.75rem;
+}
+
+.specials-section > .section-note {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--dark-green);
+  opacity: 0.75;
+  margin-bottom: 2rem;
+}
+
+.specials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+.special-card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  border-top: 4px solid var(--green);
+  box-shadow: var(--shadow-card);
+}
+
+.special-card h3 {
+  color: var(--black);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.special-card p {
+  color: #444;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+/* Energy Drinks & Other */
+.drinks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.drink-item {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 1.25rem 1.5rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.drink-icon {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.drink-item h3 {
+  font-size: 1rem;
+  color: var(--dark-green);
+  margin-bottom: 0.15rem;
+}
+
+.drink-item p {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* Mixing Recipes */
+.disclaimer-box {
+  background: #fffbe6;
+  border: 2px solid var(--lemon);
+  border-radius: 12px;
+  padding: 1.1rem 1.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.recipe-card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  border-top: 4px solid var(--coral);
+}
+
+.recipe-card h3 {
+  color: var(--dark-green);
+  margin-bottom: 0.25rem;
+  font-size: 1.1rem;
+}
+
+.recipe-card .recipe-subtitle {
+  font-size: 0.82rem;
+  color: #999;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.recipe-ingredients {
+  padding: 0;
+}
+
+.recipe-ingredients li {
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+  color: #555;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.recipe-ingredients li::before {
+  content: "•";
+  color: var(--coral);
+  font-weight: 900;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.recipe-ingredients li:last-child { border-bottom: none; }
+
+/* Cup Sizes Callout */
+.size-callout {
+  background: var(--green);
+  color: var(--black);
+  border-radius: var(--radius-card);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.size-callout h3 {
+  color: var(--black);
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.size-callout p {
+  color: rgba(0,0,0,0.75);
+  font-size: 0.95rem;
+}
+
+.size-callout p + p { margin-top: 0.5rem; }
+
+/* ============================================
+   Booking Page
+   ============================================ */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.feature-block {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 0.9rem;
+}
+
+.feature-block h3 {
+  color: var(--black);
+  margin-bottom: 0.5rem;
+}
+
+.feature-block p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.trailer-note {
+  background: var(--lemon);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--dark-green);
+  margin-top: 1.5rem;
+}
+
+/* Best For */
+.tag-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tag-cloud .tag {
+  font-size: 0.88rem;
+  padding: 0.45rem 1.1rem;
+}
+
+/* Inquiry Form */
+.booking-form {
+  background: var(--white);
+  border-radius: 24px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-field.full-width { grid-column: 1 / -1; }
+
+.form-field label {
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  padding: 0.85rem 1rem;
+  border: 2px solid #e8e8e8;
+  border-radius: 12px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--black);
+  background: var(--cream);
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--green);
+  background: var(--white);
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.form-submit { margin-top: 1.75rem; }
+
+/* Booking contact info */
+.booking-contact {
+  margin-top: 2.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+}
+
+.booking-contact p {
+  font-size: 0.92rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.booking-contact a {
+  color: var(--dark-green);
+  font-weight: 600;
+}
+
+.booking-contact a:hover { text-decoration: underline; }
+
+/* Social Proof */
+.social-proof {
+  background: var(--coral);
+  color: var(--white);
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.social-proof h2 {
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.social-proof a {
+  color: var(--lemon);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.footer {
+  background: var(--black);
+  color: var(--white);
+  padding: 3.5rem 0 0;
+}
+
+.footer-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+
+.footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--lemon);
+  display: block;
+  margin-bottom: 0.6rem;
+}
+
+.footer-tagline {
+  color: rgba(255,255,255,0.55);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.footer h4 {
+  color: var(--lemon);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-family: var(--font-body);
+}
+
+.footer-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.footer-nav-list a {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.93rem;
+  transition: color 0.2s;
+}
+
+.footer-nav-list a:hover { color: var(--lemon); }
+
+.footer-contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.footer-contact-list p,
+.footer-contact-list a {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  line-height: 1.5;
+  transition: color 0.2s;
+}
+
+.footer-contact-list a:hover { color: var(--lemon); }
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 1.25rem 1.5rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 1024px) {
+  .find-us-grid   { grid-template-columns: repeat(2, 1fr); }
+  .specials-grid  { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  section { padding: 3.5rem 0; }
+
+  .story-grid     { grid-template-columns: 1fr; gap: 2rem; }
+  .flavors-grid   { grid-template-columns: 1fr; }
+  .find-us-grid   { grid-template-columns: repeat(2, 1fr); }
+  .events-grid    { grid-template-columns: 1fr; }
+  .appears-grid   { grid-template-columns: repeat(2, 1fr); }
+  .lemonade-grid  { grid-template-columns: 1fr; }
+  .specials-section { padding: 2rem 1.25rem; }
+  .specials-grid  { grid-template-columns: 1fr; }
+  .drinks-grid    { grid-template-columns: 1fr; }
+  .recipe-grid    { grid-template-columns: 1fr; }
+  .features-grid  { grid-template-columns: 1fr; }
+  .form-grid      { grid-template-columns: 1fr; }
+  .form-field.full-width { grid-column: 1; }
+  .footer-grid    { grid-template-columns: 1fr; gap: 2rem; padding-bottom: 2rem; }
+  .booking-form   { padding: 1.5rem; }
+  .booking-contact { flex-direction: column; gap: 0.75rem; }
+}
+
+@media (max-width: 480px) {
+  .find-us-grid   { grid-template-columns: 1fr; }
+  .appears-grid   { grid-template-columns: 1fr; }
+  .hero-ctas      { flex-direction: column; }
+  .hero-ctas .btn { width: 100%; text-align: center; }
+  .hero-logo-badge { width: 110px; height: 110px; }
+}
